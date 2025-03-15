@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				bank: {
+					purple: '#6E1BC7',
+					'purple-light': '#8A33EA',
+					'purple-dark': '#4A0E8C',
+					blue: '#33A5EA',
+					'blue-light': '#68C3FF',
+					'light-blue': '#E6F4FF',
+					gray: '#F5F5F7',
+					'text-dark': '#1A1A1A',
+					'text-light': '#F5F5F7',
 				}
 			},
 			borderRadius: {
@@ -84,11 +96,26 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					from: { opacity: '0' },
+					to: { opacity: '1' }
+				},
+				'fade-out': {
+					from: { opacity: '1' },
+					to: { opacity: '0' }
+				},
+				'slide-in': {
+					from: { transform: 'translateY(10px)', opacity: '0' },
+					to: { transform: 'translateY(0)', opacity: '1' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.3s ease-in-out',
+				'fade-out': 'fade-out 0.2s ease-in-out',
+				'slide-in': 'slide-in 0.4s ease-out'
 			}
 		}
 	},
