@@ -1,8 +1,9 @@
 
 import React, { ReactNode } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, RefreshCw } from 'lucide-react';
+import { Menu, X, RefreshCw, Shield } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useBankContext } from '@/context/BankContext';
 
 interface LayoutProps {
   children: ReactNode;
@@ -13,6 +14,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children, title, showBack = false }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const location = useLocation();
+  const { currentUser } = useBankContext();
   
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -35,6 +37,11 @@ const Layout: React.FC<LayoutProps> = ({ children, title, showBack = false }) =>
           <button className="p-2 rounded-full hover:bg-bank-gray transition-colors">
             <RefreshCw size={20} className="text-bank-purple" />
           </button>
+          {currentUser?.isAdmin && (
+            <Link to="/admin" className="p-2 rounded-full bg-bank-purple text-white hover:bg-bank-purple-dark transition-colors">
+              <Shield size={20} />
+            </Link>
+          )}
         </div>
       </header>
 
@@ -68,13 +75,15 @@ const Layout: React.FC<LayoutProps> = ({ children, title, showBack = false }) =>
             >
               Conta Pessoal
             </Link>
-            <Link 
-              to="/admin" 
-              onClick={toggleMenu}
-              className="block p-3 rounded-lg hover:bg-bank-gray transition-colors text-lg"
-            >
-              Admin
-            </Link>
+            {currentUser?.isAdmin && (
+              <Link 
+                to="/admin" 
+                onClick={toggleMenu}
+                className="block p-3 rounded-lg bg-bank-purple text-white hover:bg-bank-purple-dark transition-colors text-lg"
+              >
+                Admin
+              </Link>
+            )}
           </div>
         </div>
       </div>
