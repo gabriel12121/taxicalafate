@@ -118,7 +118,7 @@ const Dashboard = () => {
           
           <div className="flex flex-col items-center">
             <button 
-              onClick={() => navigate('/transactions')}
+              onClick={() => navigate('/receive')}
               className="btn-action mb-2"
             >
               <ArrowDown size={22} />

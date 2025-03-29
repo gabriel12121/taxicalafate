@@ -13,6 +13,7 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Transfer from "./pages/Transfer";
 import QRCode from "./pages/QRCode";
+import Receive from "./pages/Receive";
 import Transactions from "./pages/Transactions";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/transfer" element={<Transfer />} />
             <Route path="/qr-pay" element={<QRCode />} />
+            <Route path="/receive" element={<Receive />} />
             <Route path="/transactions" element={<Transactions />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="*" element={<NotFound />} />
