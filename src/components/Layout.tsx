@@ -20,7 +20,7 @@ const Layout: React.FC<LayoutProps> = ({ children, title, showBack = false }) =>
       {/* Header */}
       <header className="p-4 flex items-center justify-between bg-white border-b">
         <div className="flex items-center">
-          <h1 className="text-2xl font-bold text-bank-purple">FinBank</h1>
+          {/* FinBank title removed */}
         </div>
         <div className="flex items-center space-x-2">
           <button className="p-2 rounded-full hover:bg-bank-gray transition-colors">
