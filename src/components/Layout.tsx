@@ -8,10 +8,9 @@ import { useBankContext } from '@/context/BankContext';
 interface LayoutProps {
   children: ReactNode;
   title?: string;
-  showBack?: boolean;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, title, showBack = false }) => {
+const Layout: React.FC<LayoutProps> = ({ children, title }) => {
   const location = useLocation();
   const { currentUser } = useBankContext();
   
@@ -20,7 +19,7 @@ const Layout: React.FC<LayoutProps> = ({ children, title, showBack = false }) =>
       {/* Header */}
       <header className="p-4 flex items-center justify-between bg-white border-b">
         <div className="flex items-center">
-          {/* FinBank title removed */}
+          {/* Empty div to maintain layout */}
         </div>
         <div className="flex items-center space-x-2">
           <button className="p-2 rounded-full hover:bg-bank-gray transition-colors">

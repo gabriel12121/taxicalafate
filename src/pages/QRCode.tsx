@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, QrCode, Clipboard, ArrowDown, ArrowUp } from 'lucide-react';
+import { QrCode, Clipboard, ArrowDown, ArrowUp } from 'lucide-react';
 import Layout from '@/components/Layout';
 import { useBankContext } from '@/context/BankContext';
 import { toast } from 'sonner';
@@ -73,8 +72,7 @@ const QRCode = () => {
           onClick={() => navigate('/dashboard')}
           className="flex items-center text-bank-purple mb-6"
         >
-          <ArrowLeft size={20} className="mr-1" />
-          <span>Voltar</span>
+          <span>Voltar ao Dashboard</span>
         </button>
         
         {/* Abas de modo */}
