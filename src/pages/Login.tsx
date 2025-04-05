@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Lock, Mail, ArrowLeft, Eye, EyeOff } from 'lucide-react';
 import Layout from '@/components/Layout';
 import { useBankContext } from '@/context/BankContext';
+import GoogleLoginButton from '@/components/GoogleLoginButton';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -33,7 +34,6 @@ const Login = () => {
           onClick={() => navigate('/')}
           className="flex items-center text-bank-purple mb-6"
         >
-          <ArrowLeft size={20} className="mr-1" />
           <span>Voltar</span>
         </button>
         
@@ -87,6 +87,17 @@ const Login = () => {
           >
             {isLoading ? 'Entrando...' : 'Entrar'}
           </button>
+          
+          <div className="relative my-6">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gray-200"></div>
+            </div>
+            <div className="relative flex justify-center">
+              <span className="bg-white px-4 text-sm text-gray-500">Ou continue com</span>
+            </div>
+          </div>
+          
+          <GoogleLoginButton />
           
           <div className="text-center mt-4">
             <p className="text-gray-500">

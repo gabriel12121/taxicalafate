@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { toast } from 'sonner';
 
@@ -11,6 +10,13 @@ interface User {
   balance: number;
   isAdmin: boolean;
   transactions: Transaction[];
+  googleId?: string;
+}
+
+interface GoogleUser {
+  id: string;
+  name: string;
+  email: string;
 }
 
 interface Transaction {
@@ -28,6 +34,7 @@ interface BankContextType {
   showBalance: boolean;
   setShowBalance: (show: boolean) => void;
   login: (email: string, password: string) => boolean;
+  loginWithGoogle: (googleUser: GoogleUser) => boolean;
   logout: () => void;
   register: (name: string, email: string, password: string) => boolean;
   getUser: (id: string) => User | undefined;
@@ -46,6 +53,7 @@ const defaultContext: BankContextType = {
   showBalance: true,
   setShowBalance: () => {},
   login: () => false,
+  loginWithGoogle: () => false,
   logout: () => {},
   register: () => false,
   getUser: () => undefined,
@@ -120,6 +128,45 @@ export const BankProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     
     toast.error('Email ou senha incorretos');
     return false;
+  };
+
+  // Login com Google
+  const loginWithGoogle = (googleUser: GoogleUser): boolean => {
+    // Verificar se usuário já existe
+    const existingUser = users.find(u => u.email === googleUser.email || u.googleId === googleUser.id);
+    
+    if (existingUser) {
+      // Atualizar googleId se não existir
+      if (!existingUser.googleId) {
+        setUsers(prev => prev.map(u => {
+          if (u.id === existingUser.id) {
+            return { ...u, googleId: googleUser.id };
+          }
+          return u;
+        }));
+      }
+      
+      setCurrentUser(existingUser);
+      toast.success(`Bem-vindo de volta, ${existingUser.name}!`);
+      return true;
+    } else {
+      // Criar novo usuário
+      const newUser: User = {
+        id: Date.now().toString(),
+        name: googleUser.name,
+        email: googleUser.email,
+        password: '', // Usuários do Google não têm senha local
+        googleId: googleUser.id,
+        balance: 0,
+        isAdmin: false,
+        transactions: []
+      };
+      
+      setUsers(prev => [...prev, newUser]);
+      setCurrentUser(newUser);
+      toast.success(`Bem-vindo, ${newUser.name}!`);
+      return true;
+    }
   };
 
   // Logout
@@ -410,6 +457,7 @@ export const BankProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     showBalance,
     setShowBalance,
     login,
+    loginWithGoogle,
     logout,
     register,
     getUser,
