@@ -1,7 +1,7 @@
 
 {
-  "name": "FinBank - Seu Banco Digital",
-  "short_name": "FinBank",
+  "name": "Taxicalafate - Seu Banco Digital",
+  "short_name": "Taxicalafate",
   "description": "Aplicativo bancário simples e seguro",
   "start_url": "/",
   "display": "standalone",
