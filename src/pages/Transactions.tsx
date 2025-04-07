@@ -41,21 +41,21 @@ const Transactions = () => {
   // Obter o nome do usuário para exibição na transação
   const getUserName = (userId: string, isFrom: boolean) => {
     if (userId === 'admin') return 'Sistema';
-    if (userId === currentUser.id) return isFrom ? 'Você' : 'Sua conta';
+    if (userId === currentUser.id) return isFrom ? 'Tú' : 'Su cuenta';
     
     const user = users.find(u => u.id === userId);
-    return user ? user.name : 'Usuário';
+    return user ? user.name : 'Usuario';
   };
 
   return (
-    <Layout title="Histórico de Transações">
+    <Layout title="Historial de transacciones">
       <div className="animate-fade-in">
         <button 
           onClick={() => navigate('/dashboard')}
           className="flex items-center text-bank-purple mb-6"
         >
           <ArrowLeft size={20} className="mr-1" />
-          <span>Voltar</span>
+          <span>Regresa</span>
         </button>
         
         {sortedTransactions.length > 0 ? (
@@ -79,7 +79,7 @@ const Transactions = () => {
                         }
                       </div>
                       <div>
-                        <p className="font-medium">{transaction.description || `${isDebit ? 'Envio para' : 'Recebido de'} ${otherPartyName}`}</p>
+                        <p className="font-medium">{transaction.description || `${isDebit ? 'Envío a' : 'Recibido de'} ${otherPartyName}`}</p>
                         <p className="text-xs text-gray-500">{formatDate(transaction.date)}</p>
                       </div>
                     </div>
@@ -93,7 +93,7 @@ const Transactions = () => {
           </div>
         ) : (
           <div className="bg-white p-6 rounded-xl border border-gray-100 text-center shadow-sm">
-            <p className="text-gray-500">Nenhuma transação encontrada</p>
+            <p className="text-gray-500">No se han encontrado transacciones</p>
           </div>
         )}
       </div>

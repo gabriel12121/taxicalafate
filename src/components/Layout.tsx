@@ -17,20 +17,11 @@ const Layout: React.FC<LayoutProps> = ({ children, title }) => {
   return (
     <div className="min-h-screen max-w-lg mx-auto bg-white shadow-lg relative overflow-hidden">
       {/* Header */}
-      <header className="p-4 flex items-center justify-between bg-white border-b">
+      <header className="p-4 flex items-center justify-between bg-white ">
         <div className="flex items-center">
           {/* Empty div to maintain layout */}
         </div>
-        <div className="flex items-center space-x-2">
-          <button className="p-2 rounded-full hover:bg-bank-gray transition-colors">
-            <RefreshCw size={20} className="text-bank-purple" />
-          </button>
-          {currentUser?.isAdmin && (
-            <Link to="/admin" className="p-2 rounded-full bg-bank-purple text-white hover:bg-bank-purple-dark transition-colors">
-              <Shield size={20} />
-            </Link>
-          )}
-        </div>
+
       </header>
 
       {/* Page Content */}

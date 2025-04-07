@@ -34,13 +34,13 @@ const Transfer = () => {
     e.preventDefault();
     
     if (!selectedUser) {
-      toast.error('Selecione um destinatário');
+      toast.error('Seleccionar un destinatario');
       return;
     }
     
     const amountValue = parseFloat(amount);
     if (isNaN(amountValue) || amountValue <= 0) {
-      toast.error('Digite um valor válido');
+      toast.error('Introduzca un valor válido');
       return;
     }
     
@@ -51,7 +51,7 @@ const Transfer = () => {
         currentUser!.id, 
         selectedUser, 
         amountValue,
-        description || 'Transferência'
+        description || 'Transferencia'
       );
       
       if (success) {
@@ -74,14 +74,14 @@ const Transfer = () => {
           className="flex items-center text-bank-purple mb-6"
         >
           <ArrowLeft size={20} className="mr-1" />
-          <span>Voltar</span>
+          <span>Regresa</span>
         </button>
         
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Selecionar usuário */}
           <div className="space-y-3">
             <label className="block text-sm font-medium text-gray-700">
-              Para quem você deseja transferir?
+             A quién quieres transferirte?
             </label>
             
             <div className="relative">
@@ -90,7 +90,7 @@ const Transfer = () => {
               </div>
               <input
                 type="text"
-                placeholder="Buscar por nome ou email"
+                placeholder="Buscar por nombre o correo electrónico"
                 value={searchTerm}
                 onChange={(e) => {
                   setSearchTerm(e.target.value);
@@ -120,7 +120,7 @@ const Transfer = () => {
                   ))
                 ) : (
                   <div className="p-4 text-center text-gray-500">
-                    Nenhum usuário encontrado
+                    No se ha encontrado ningún usuario
                   </div>
                 )}
               </div>
@@ -130,7 +130,7 @@ const Transfer = () => {
             {selectedUser && (
               <div className="bg-bank-light-blue p-4 rounded-xl">
                 <p className="font-medium">
-                  Destinatário: {users.find(u => u.id === selectedUser)?.name}
+                  Destinatario: {users.find(u => u.id === selectedUser)?.name}
                 </p>
                 <p className="text-sm text-gray-500">
                   {users.find(u => u.id === selectedUser)?.email}
@@ -142,7 +142,7 @@ const Transfer = () => {
           {/* Valor */}
           <div className="space-y-2">
             <label className="block text-sm font-medium text-gray-700">
-              Valor a transferir
+           Importe a transferir
             </label>
             <div className="relative">
               <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-medium">
@@ -164,11 +164,11 @@ const Transfer = () => {
           {/* Descrição */}
           <div className="space-y-2">
             <label className="block text-sm font-medium text-gray-700">
-              Descrição (opcional)
+              Descripción (opcional)
             </label>
             <input
               type="text"
-              placeholder="Ex: Pagamento de aluguel"
+              placeholder="Ej: Pago de alquiler"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-bank-purple/50"

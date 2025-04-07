@@ -64,7 +64,7 @@ const Dashboard = () => {
       <div className="animate-fade-in pb-20">
         <div className="flex justify-between items-center mb-6">
           <div>
-            <p className="text-gray-500">Olá,</p>
+            <p className="text-gray-500">Hola,</p>
             <h2 className="text-2xl font-bold">{currentUser.name}</h2>
           </div>
           <button 
@@ -103,28 +103,10 @@ const Dashboard = () => {
             >
               <ArrowRightLeft size={22} />
             </button>
-            <span className="text-xs text-gray-600">Transferir</span>
+            <span className="text-xs text-gray-600">Transferencia</span>
           </div>
           
-          <div className="flex flex-col items-center">
-            <button 
-              onClick={() => navigate('/qr-pay')}
-              className="btn-action mb-2"
-            >
-              <QrCode size={22} />
-            </button>
-            <span className="text-xs text-gray-600">QR Code</span>
-          </div>
-          
-          <div className="flex flex-col items-center">
-            <button 
-              onClick={() => navigate('/receive')}
-              className="btn-action mb-2"
-            >
-              <ArrowDown size={22} />
-            </button>
-            <span className="text-xs text-gray-600">Receber</span>
-          </div>
+
           
           <div className="flex flex-col items-center">
             <button 
@@ -140,10 +122,10 @@ const Dashboard = () => {
         {/* Últimas transações */}
         <div>
           <div className="flex justify-between items-center mb-4">
-            <h3 className="font-semibold">Últimas transações</h3>
+            <h3 className="font-semibold">Últimas transacciones</h3>
             <button 
               onClick={() => navigate('/transactions')}
-              className="text-sm text-bank-purple"
+              className="text-sm text-[#8bb09b]"
             >
               Ver todas
             </button>
@@ -184,7 +166,7 @@ const Dashboard = () => {
             </div>
           ) : (
             <div className="bg-white p-6 rounded-xl border border-gray-100 text-center shadow-sm">
-              <p className="text-gray-500">Nenhuma transação recente</p>
+              <p className="text-gray-500">No hay transacciones recientes</p>
             </div>
           )}
         </div>

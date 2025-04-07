@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { Lock, Mail, ArrowLeft, Eye, EyeOff } from 'lucide-react';
 import Layout from '@/components/Layout';
 import { useBankContext } from '@/context/BankContext';
-import GoogleLoginButton from '@/components/GoogleLoginButton';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -32,14 +31,14 @@ const Login = () => {
       <div className="animate-fade-in">
         <button 
           onClick={() => navigate('/')}
-          className="flex items-center text-bank-purple mb-6"
+          className="flex items-center text-[#8bb09b] mb-6"
         >
-          <span>Voltar</span>
+          <span>Regresa</span>
         </button>
         
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-bank-purple">Bem-vindo novamente</h1>
-          <p className="text-gray-500 mt-2">Acesse sua conta para continuar</p>
+          <h1 className="text-3xl font-bold text-[#8bb09b]">Bienvenidos de nuevo</h1>
+          <p className="text-gray-500 mt-2">Inicia sesión en tu cuenta para continuar</p>
         </div>
         
         <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-6">
@@ -64,7 +63,7 @@ const Login = () => {
               </div>
               <input
                 type={showPassword ? "text" : "password"}
-                placeholder="Senha"
+                placeholder="Contraseña"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -83,31 +82,28 @@ const Login = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-bank-purple text-white py-4 rounded-xl font-medium hover:bg-bank-purple-light transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+            className="w-full bg-[#8bb09b] text-white py-4 rounded-xl font-medium hover:bg-bank-purple-light transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            {isLoading ? 'Entrando...' : 'Entrar'}
+            {isLoading ? 'Entrar...' : 'Entrar'}
           </button>
           
           <div className="relative my-6">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-gray-200"></div>
             </div>
-            <div className="relative flex justify-center">
-              <span className="bg-white px-4 text-sm text-gray-500">Ou continue com</span>
-            </div>
+       
           </div>
           
-          <GoogleLoginButton />
           
           <div className="text-center mt-4">
             <p className="text-gray-500">
-              Ainda não tem conta?{' '}
+             Aún no tienes una cuenta?{' '}
               <button
                 type="button"
                 onClick={() => navigate('/register')}
-                className="text-bank-purple font-medium"
+                className="text-[#8bb09b] font-medium"
               >
-                Criar conta
+               Registro
               </button>
             </p>
           </div>

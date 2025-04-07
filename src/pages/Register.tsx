@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { User, Mail, Lock, ArrowLeft, Eye, EyeOff } from 'lucide-react';
 import Layout from '@/components/Layout';
 import { useBankContext } from '@/context/BankContext';
-import GoogleLoginButton from '@/components/GoogleLoginButton';
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -22,12 +21,12 @@ const Register = () => {
     setError('');
     
     if (password !== confirmPassword) {
-      setError('As senhas não conferem');
+      setError('Las contraseñas no coinciden');
       return;
     }
     
     if (password.length < 6) {
-      setError('A senha deve ter pelo menos 6 caracteres');
+      setError('La contraseña debe tener al menos 6 caracteres');
       return;
     }
     
@@ -49,12 +48,12 @@ const Register = () => {
           onClick={() => navigate('/')}
           className="flex items-center text-bank-purple mb-6"
         >
-          <span>Voltar</span>
+          <span>Regresa</span>
         </button>
         
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-bank-purple">Crie sua conta</h1>
-          <p className="text-gray-500 mt-2">Preencha seus dados para começar</p>
+          <h1 className="text-3xl font-bold text-[#8bb09b]">Crea tu cuenta</h1>
+          <p className="text-gray-500 mt-2">Rellena tus datos para empezar</p>
         </div>
         
         <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-6">
@@ -71,7 +70,7 @@ const Register = () => {
               </div>
               <input
                 type="text"
-                placeholder="Nome completo"
+                placeholder="Nombre completo"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
@@ -99,7 +98,7 @@ const Register = () => {
               </div>
               <input
                 type={showPassword ? "text" : "password"}
-                placeholder="Senha"
+                placeholder="Contraseña"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -120,7 +119,7 @@ const Register = () => {
               </div>
               <input
                 type={showPassword ? "text" : "password"}
-                placeholder="Confirmar senha"
+                placeholder="Confirmar contraseña"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
@@ -132,29 +131,20 @@ const Register = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-bank-purple text-white py-4 rounded-xl font-medium hover:bg-bank-purple-light transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+            className="w-full bg-[#8bb09b] text-white py-4 rounded-xl font-medium hover:bg-bank-purple-light transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            {isLoading ? 'Cadastrando...' : 'Criar conta'}
+            {isLoading ? 'Registrar...' : 'Registro'}
           </button>
+    
           
-          <div className="relative my-6">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-200"></div>
-            </div>
-            <div className="relative flex justify-center">
-              <span className="bg-white px-4 text-sm text-gray-500">Ou continue com</span>
-            </div>
-          </div>
-          
-          <GoogleLoginButton />
           
           <div className="text-center mt-4">
             <p className="text-gray-500">
-              Já tem uma conta?{' '}
+              Ya tienes una cuenta?{' '}
               <button
                 type="button"
                 onClick={() => navigate('/login')}
-                className="text-bank-purple font-medium"
+                className="text-[#8bb09b] font-medium"
               >
                 Entrar
               </button>
