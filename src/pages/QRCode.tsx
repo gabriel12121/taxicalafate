@@ -39,7 +39,7 @@ const QRCode = () => {
 
   const handlePayWithQR = () => {
     if (!qrInput) {
-      toast.error('Cole o código QR');
+      toast.error('Pegar código QR');
       return;
     }
     
@@ -58,7 +58,7 @@ const QRCode = () => {
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(qrData);
-    toast.success('Código copiado para a área de transferência');
+    toast.success('Código copiado en el portapapeles');
   };
 
   if (!currentUser) {
@@ -66,13 +66,13 @@ const QRCode = () => {
   }
 
   return (
-    <Layout title="Pagamento QR Code">
+    <Layout title="Pago con código QR">
       <div className="animate-fade-in">
         <button 
           onClick={() => navigate('/dashboard')}
           className="flex items-center text-bank-purple mb-6"
         >
-          <span>Voltar ao Dashboard</span>
+          <span>Regresso</span>
         </button>
         
         {/* Abas de modo */}
@@ -85,7 +85,7 @@ const QRCode = () => {
           >
             <div className="flex flex-col items-center justify-center">
               <ArrowDown size={18} className="mb-1" />
-              <span className="text-sm">Receber</span>
+              <span className="text-sm">Recibir</span>
             </div>
           </button>
           <button
@@ -105,14 +105,14 @@ const QRCode = () => {
         {mode === 'generate' ? (
           <div>
             <p className="text-gray-600 mb-4">
-              Gere um código QR para receber pagamentos de outros usuários
+              Genera un código QR para recibir pagos de otros usuarios
             </p>
             
             {!qrData ? (
               <div className="space-y-4">
                 <div className="space-y-2">
                   <label className="block text-sm font-medium text-gray-700">
-                    Valor a receber
+                    Importe a cobrar
                   </label>
                   <div className="relative">
                     <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-medium">
@@ -149,7 +149,7 @@ const QRCode = () => {
                 </div>
                 
                 <div className="text-center">
-                  <p className="font-medium text-bank-purple">Código gerado!</p>
+                  <p className="font-medium text-bank-purple">Código generado!</p>
                   <p className="text-sm text-gray-500 mt-1">
                     Valor: R$ {parseFloat(amount).toFixed(2)}
                   </p>
@@ -166,7 +166,7 @@ const QRCode = () => {
                 </div>
                 
                 <p className="text-xs text-gray-500 text-center">
-                  Compartilhe este código para receber o pagamento
+                 Comparte este código para recibir pagos
                 </p>
                 
                 <button
@@ -176,7 +176,7 @@ const QRCode = () => {
                   }}
                   className="w-full bg-white border border-bank-purple text-bank-purple py-3 rounded-xl font-medium hover:bg-bank-gray transition-colors"
                 >
-                  Gerar novo código
+                  Generar nuevo código
                 </button>
               </div>
             )}
@@ -184,7 +184,7 @@ const QRCode = () => {
         ) : (
           <div>
             <p className="text-gray-600 mb-4">
-              Cole o código QR para realizar um pagamento
+              Pega el código QR para realizar un pago
             </p>
             
             <div className="space-y-4">
@@ -206,7 +206,7 @@ const QRCode = () => {
                 disabled={isLoading || !qrInput}
                 className="w-full bg-bank-purple text-white py-4 rounded-xl font-medium hover:bg-bank-purple-light transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center"
               >
-                {isLoading ? 'Processando...' : 'Pagar com código QR'}
+                {isLoading ? 'Processando...' : 'Pagar con código QR'}
                 {!isLoading && <ArrowUp size={18} className="ml-2" />}
               </button>
             </div>
