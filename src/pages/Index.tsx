@@ -65,7 +65,7 @@ const Index = () => {
         <div className="w-full max-w-md space-y-4">
           <button 
             onClick={() => navigate('/login')}
-            className="w-full bg-[#8bb09b] text-white py-4 rounded-xl font-medium flex justify-center items-center hover:bg-bank-purple-light transition-colors"
+            className="w-full bg-[#8bb09b] text-white py-4 rounded-xl font-medium flex justify-center items-center  transition-colors"
           >
             Entrar
             <ArrowRight className="ml-2" size={18} />
@@ -73,7 +73,7 @@ const Index = () => {
           
           <button 
             onClick={() => navigate('/register')}
-className="w-full bg-white text-[#8bb09b] py-4 rounded-xl font-medium border border-[#8bb09b] hover:bg-bank-gray transition-colors"
+className="w-full bg-white text-[#8bb09b] py-4 rounded-xl font-medium border border-[#8bb09b]  transition-colors"
           >
             Criar conta
           </button>

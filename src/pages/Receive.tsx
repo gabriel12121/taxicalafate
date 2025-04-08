@@ -54,7 +54,7 @@ const Receive = () => {
         <Button 
           onClick={() => navigate('/dashboard')}
           variant="ghost" 
-          className="mb-6 p-0 h-auto flex items-center text-bank-purple"
+          className="mb-6 p-0 h-auto flex items-center text-[#adcbba]"
         >
           <ArrowLeft size={20} className="mr-1" />
           <span>Regresso</span>
@@ -91,7 +91,7 @@ const Receive = () => {
               <Button
                 onClick={handleGenerate}
                 disabled={isLoading || !amount}
-                className="w-full bg-bank-purple hover:bg-bank-purple-light"
+                className="w-full bg-bank-purple "
               >
                 {isLoading ? 'Generador...' : 'Generar código de pago'}
                 {!isLoading && <QrCode size={18} className="ml-2" />}

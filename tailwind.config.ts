@@ -67,6 +67,7 @@ export default {
 					purple: '#6E1BC7',
 					'purple-light': '#8A33EA',
 					'purple-dark': '#4A0E8C',
+  green: '#8bb09b',
 					blue: '#33A5EA',
 					'blue-light': '#68C3FF',
 					'light-blue': '#E6F4FF',

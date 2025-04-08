@@ -91,7 +91,7 @@
   }
   
   .card-balance {
-    @apply bg-gradient-to-br from-bank-purple to-bank-purple-dark rounded-2xl shadow-lg;
+    @apply bg-gradient-to-br from-bank-green to-bank-green rounded-2xl shadow-lg;
   }
   
   .btn-action {

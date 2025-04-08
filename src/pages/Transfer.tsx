@@ -71,7 +71,7 @@ const Transfer = () => {
       <div className="animate-fade-in">
         <button 
           onClick={() => navigate('/dashboard')}
-          className="flex items-center text-bank-purple mb-6"
+          className="flex items-center text-[#adcbba] mb-6"
         >
           <ArrowLeft size={20} className="mr-1" />
           <span>Regresa</span>
@@ -179,7 +179,7 @@ const Transfer = () => {
           <button
             type="submit"
             disabled={isLoading || !selectedUser || !amount}
-            className="w-full bg-bank-purple text-white py-4 rounded-xl font-medium hover:bg-bank-purple-light transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center"
+            className="w-full bg-[#8bb09b] text-white py-4 rounded-xl font-medium hover:bg-[#8bb09b] transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center"
           >
             {isLoading ? 'Processando...' : 'Transferir agora'}
             {!isLoading && <Send size={18} className="ml-2" />}

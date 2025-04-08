@@ -46,7 +46,7 @@ const Register = () => {
       <div className="animate-fade-in">
         <button 
           onClick={() => navigate('/')}
-          className="flex items-center text-bank-purple mb-6"
+          className="flex items-center text-[#adcbba] mb-6"
         >
           <span>Regresa</span>
         </button>
@@ -131,7 +131,7 @@ const Register = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-[#8bb09b] text-white py-4 rounded-xl font-medium hover:bg-bank-purple-light transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+            className="w-full bg-[#8bb09b] text-white py-4 rounded-xl font-medium transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
           >
             {isLoading ? 'Registrar...' : 'Registro'}
           </button>

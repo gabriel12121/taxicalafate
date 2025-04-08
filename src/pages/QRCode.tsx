@@ -70,7 +70,7 @@ const QRCode = () => {
       <div className="animate-fade-in">
         <button 
           onClick={() => navigate('/dashboard')}
-          className="flex items-center text-bank-purple mb-6"
+          className="flex items-center text-[#adcbba] mb-6"
         >
           <span>Regresso</span>
         </button>
@@ -134,7 +134,7 @@ const QRCode = () => {
                 <button
                   onClick={handleGenerate}
                   disabled={isLoading || !amount}
-                  className="w-full bg-bank-purple text-white py-4 rounded-xl font-medium hover:bg-bank-purple-light transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center"
+                  className="w-full bg-[#8bb09b] text-white py-4 rounded-xl font-medium transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center"
                 >
                   {isLoading ? 'Gerando...' : 'Gerar código QR'}
                   {!isLoading && <QrCode size={18} className="ml-2" />}
@@ -159,7 +159,7 @@ const QRCode = () => {
                   <p className="text-sm font-mono break-all pr-8">{qrData}</p>
                   <button
                     onClick={copyToClipboard}
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 hover:bg-bank-blue/10 rounded"
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2  rounded"
                   >
                     <Clipboard size={16} className="text-bank-blue" />
                   </button>
@@ -174,7 +174,7 @@ const QRCode = () => {
                     setQrData('');
                     setAmount('');
                   }}
-                  className="w-full bg-white border border-bank-purple text-bank-purple py-3 rounded-xl font-medium hover:bg-bank-gray transition-colors"
+                  className="w-full bg-white border border-bank-purple text-bank-purple py-3 rounded-xl font-medium  transition-colors"
                 >
                   Generar nuevo código
                 </button>
@@ -204,7 +204,7 @@ const QRCode = () => {
               <button
                 onClick={handlePayWithQR}
                 disabled={isLoading || !qrInput}
-                className="w-full bg-bank-purple text-white py-4 rounded-xl font-medium hover:bg-bank-purple-light transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center"
+                className="w-full bg-[#8bb09b] text-white py-4 rounded-xl font-medium  transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center"
               >
                 {isLoading ? 'Processando...' : 'Pagar con código QR'}
                 {!isLoading && <ArrowUp size={18} className="ml-2" />}

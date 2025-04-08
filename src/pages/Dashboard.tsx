@@ -69,19 +69,19 @@ const Dashboard = () => {
           </div>
           <button 
             onClick={handleRefresh}
-            className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+            className="p-2 rounded-full transition-colors"
           >
             <RefreshCw size={20} className={`text-bank-purple ${isLoading ? 'animate-spin' : ''}`} />
           </button>
         </div>
         
         {/* Card de saldo */}
-        <div className="card-balance p-6 mb-6">
+        <div className="bg-bank-green card-balance p-6 mb-6" >
           <div className="flex justify-between items-center mb-1">
             <h3 className="text-white font-medium">Saldo disponível</h3>
             <button 
               onClick={() => setShowBalance(!showBalance)}
-              className="text-white/80 hover:text-white"
+              className="text-white/80"
             >
               {showBalance ? <EyeOff size={20} /> : <Eye size={20} />}
             </button>
@@ -99,7 +99,7 @@ const Dashboard = () => {
           <div className="flex flex-col items-center">
             <button 
               onClick={() => navigate('/transfer')}
-              className="btn-action mb-2"
+              className="btn-action mb-2 bg-[#8bb09b]"
             >
               <ArrowRightLeft size={22} />
             </button>
@@ -109,7 +109,7 @@ const Dashboard = () => {
           <div className="flex flex-col items-center">
              <button 
                onClick={() => navigate('/qr-pay')}
-               className="btn-action mb-2"
+               className="btn-action mb-2 bg-[#8bb09b]"
              >
                <QrCode size={22} />
              </button>
@@ -119,7 +119,7 @@ const Dashboard = () => {
           <div className="flex flex-col items-center">
             <button 
               onClick={() => navigate('/transactions')}
-              className="btn-action mb-2"
+              className="btn-action mb-2 bg-[#8bb09b]"
             >
               <ArrowUp size={22} />
             </button>
