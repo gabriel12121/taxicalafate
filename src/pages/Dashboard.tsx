@@ -106,7 +106,15 @@ const Dashboard = () => {
             <span className="text-xs text-gray-600">Transferencia</span>
           </div>
           
-
+          <div className="flex flex-col items-center">
+             <button 
+               onClick={() => navigate('/qr-pay')}
+               className="btn-action mb-2"
+             >
+               <QrCode size={22} />
+             </button>
+             <span className="text-xs text-gray-600">QR Code</span>
+           </div>
           
           <div className="flex flex-col items-center">
             <button 
