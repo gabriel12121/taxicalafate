@@ -1,6 +1,6 @@
 
 // Cache name with version (change this to force cache update)
-const CACHE_NAME = 'finbank-cache-v1';
+const CACHE_NAME = 'taxicalafe-cache-v1';
 
 // Files to cache
 const urlsToCache = [
